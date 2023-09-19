@@ -23,6 +23,14 @@ namespace Algorithms_Lab1
         public MainWindow()
         {
             InitializeComponent();
+
+            int[] inputData1 = Generator.GeneranteNumbers(5);
+            int[] inputData2 = Generator.GeneranteNumbers(5);
+            int[] inputData3 = Generator.GeneranteNumbers(5);
+            int[] inputData4 = Generator.GeneranteNumbers(5);
+            int[] inputData5 = Generator.GeneranteNumbers(5);
+
+            ListBox.ItemsSource = inputData1;
         }
     }
 }
