@@ -34,7 +34,7 @@ namespace Algorithms_Lab1
             Alg mult = algorithm.Mult;
             Alg bubbleSort = algorithm.BubbleSort;
 
-            int[][] inputData = Generator.GeneranteNumbers(100);
+            int[][] inputData = Generator.GeneranteNumbers(1000);
             
             long[] times1 = analyzer.GetTimes(inputData, firstAlg);
             long[] times2 = analyzer.GetTimes(inputData, summ);
@@ -43,12 +43,12 @@ namespace Algorithms_Lab1
 
 
 
-            ListBox0.ItemsSource = inputData[0];
-            ListBox1.ItemsSource = firstAlg(inputData[0]);
-            ListBox2.ItemsSource = summ(inputData[0]);
-            ListBox3.ItemsSource = mult(inputData[0]);
-            ListBox4.ItemsSource = bubbleSort(inputData[0]);
-            Times1.ItemsSource = times1;
+            ListBox0.ItemsSource = inputData[0];    // просто вывод входных данных
+            ListBox1.ItemsSource = inputData[1];
+            ListBox2.ItemsSource = inputData[2];
+            ListBox3.ItemsSource = inputData[3];
+            ListBox4.ItemsSource = inputData[4];
+            Times1.ItemsSource = times1;            //вывод времени работы в мс (в нижних колонках)
             Times2.ItemsSource = times2;
             Times3.ItemsSource = times3;
             Times4.ItemsSource = times4;
