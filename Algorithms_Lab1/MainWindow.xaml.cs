@@ -15,22 +15,44 @@ using System.Windows.Shapes;
 
 namespace Algorithms_Lab1
 {
+    
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
+        public delegate int[] Alg(int[] arr);
         public MainWindow()
         {
             InitializeComponent();
 
-            int[] inputData1 = Generator.GeneranteNumbers(5);
-            int[] inputData2 = Generator.GeneranteNumbers(5);
-            int[] inputData3 = Generator.GeneranteNumbers(5);
-            int[] inputData4 = Generator.GeneranteNumbers(5);
-            int[] inputData5 = Generator.GeneranteNumbers(5);
+            Algorithm algorithm = new Algorithm();
+            Analyzer analyzer = new Analyzer();
 
-            ListBox.ItemsSource = inputData1;
+            Alg firstAlg = algorithm.FirstAlg;
+            Alg summ = algorithm.Summ;
+            Alg mult = algorithm.Mult;
+            Alg bubbleSort = algorithm.BubbleSort;
+
+            int[][] inputData = Generator.GeneranteNumbers(100);
+            
+            long[] times1 = analyzer.GetTimes(inputData, firstAlg);
+            long[] times2 = analyzer.GetTimes(inputData, summ);
+            long[] times3 = analyzer.GetTimes(inputData, mult);
+            long[] times4 = analyzer.GetTimes(inputData, bubbleSort);
+
+
+
+            ListBox0.ItemsSource = inputData[0];
+            ListBox1.ItemsSource = firstAlg(inputData[0]);
+            ListBox2.ItemsSource = summ(inputData[0]);
+            ListBox3.ItemsSource = mult(inputData[0]);
+            ListBox4.ItemsSource = bubbleSort(inputData[0]);
+            Times1.ItemsSource = times1;
+            Times2.ItemsSource = times2;
+            Times3.ItemsSource = times3;
+            Times4.ItemsSource = times4;
+
         }
     }
 }

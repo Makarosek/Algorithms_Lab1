@@ -6,7 +6,27 @@
         xmlns:local="clr-namespace:Algorithms_Lab1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <ListBox Name="ListBox"/>
+    
+    <Grid ShowGridLines="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <ListBox Grid.Column="0" Grid.Row="0" Name="ListBox0"/>
+        <ListBox Grid.Column="1" Grid.Row="0" Name="ListBox1"/>
+        <ListBox Grid.Column="2" Grid.Row="0" Name="ListBox2"/>
+        <ListBox Grid.Column="3" Grid.Row="0" Name="ListBox3"/>
+        <ListBox Grid.Column="4" Grid.Row="0" Name="ListBox4"/>
+        <ListBox Grid.Column="0" Grid.Row="1" Name="Times1"/>
+        <ListBox Grid.Column="1" Grid.Row="1" Name="Times2"/>
+        <ListBox Grid.Column="2" Grid.Row="1" Name="Times3"/>
+        <ListBox Grid.Column="3" Grid.Row="1" Name="Times4"/>
     </Grid>
 </Window>

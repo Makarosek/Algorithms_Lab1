@@ -1,10 +1,26 @@
-﻿namespace Algorithms_Lab1;
+﻿using System.Diagnostics;
 
-public class Analizator
+namespace Algorithms_Lab1;
+
+public class Analyzer
 {
-    public int[] GetTimes()
+    public long[] GetTimes(int[][] arr, MainWindow.Alg alg)
     {
-        //замер
-        return new []{1, 2, 3, 4, 5};
+        Stopwatch stopwatch = new Stopwatch();
+        long[] res = new long[5];
+
+        for (int i = 0; i < arr.Length; i++)
+        {
+            stopwatch.Start();
+            alg(arr[i]);
+            stopwatch.Stop();
+
+            res[i] = stopwatch.ElapsedMilliseconds;
+            stopwatch.Reset();
+
+        }
+
+        return res;
     }
 }
+
