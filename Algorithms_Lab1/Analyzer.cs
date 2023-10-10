@@ -20,7 +20,7 @@ public class Analyzer
 
         }
 
-        return res;
+        return res/100;
     }
 }
 

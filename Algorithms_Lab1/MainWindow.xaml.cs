@@ -33,13 +33,26 @@ namespace Algorithms_Lab1
             Alg summ = algorithm.Summ;
             Alg mult = algorithm.Mult;
             Alg bubbleSort = algorithm.BubbleSort;
+            Alg gnomeSort = algorithm.GnomeSort;
+            Alg timsort = algorithm.Timsort;
+            Alg selection = algorithm.SelectSort;
+            Alg quickSort = algorithm.QuickSort;
+            //Alg horner = algorithm.Horner;
+            //Alg gnomeSortArray = algorithm.GnomeSortArray;
 
-            int[][] inputData = Generator.GeneranteNumbers(1000);
+            int[][] inputData = Generator.GenerateNumbers(10000);
             
             long[] times1 = analyzer.GetTimes(inputData, firstAlg);
             long[] times2 = analyzer.GetTimes(inputData, summ);
             long[] times3 = analyzer.GetTimes(inputData, mult);
             long[] times4 = analyzer.GetTimes(inputData, bubbleSort);
+            long[] times5 = analyzer.GetTimes(inputData, gnomeSort);
+            long[] times6 = analyzer.GetTimes(inputData, timsort);
+            long[] times7 = analyzer.GetTimes(inputData, selection);
+            long[] times8 = analyzer.GetTimes(inputData, quickSort);
+
+            //long[] times5 = analyzer.GetTimes(inputData, horner);
+            //long[] times6 = analyzer.GetTimes(inputData, gnomeSortArray);
 
 
 
@@ -48,10 +61,18 @@ namespace Algorithms_Lab1
             ListBox2.ItemsSource = inputData[2];
             ListBox3.ItemsSource = inputData[3];
             ListBox4.ItemsSource = inputData[4];
+
             Times1.ItemsSource = times1;            //вывод времени работы в мс (в нижних колонках)
             Times2.ItemsSource = times2;
             Times3.ItemsSource = times3;
             Times4.ItemsSource = times4;
+            Times5.ItemsSource = times5;
+            Times6.ItemsSource = times6;
+            Times7.ItemsSource = times7;
+            Times8.ItemsSource = times8;
+
+            //Times5.ItemsSource = times5;
+            //Times6.ItemsSource = times6;
 
         }
     }

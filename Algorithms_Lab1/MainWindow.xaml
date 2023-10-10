@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Algorithms_Lab1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="500" Width="1000">
     
     <Grid ShowGridLines="True">
         <Grid.ColumnDefinitions>
@@ -14,6 +14,9 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
+			<ColumnDefinition></ColumnDefinition>
+			<ColumnDefinition></ColumnDefinition>
+			<ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
@@ -28,5 +31,11 @@
         <ListBox Grid.Column="1" Grid.Row="1" Name="Times2"/>
         <ListBox Grid.Column="2" Grid.Row="1" Name="Times3"/>
         <ListBox Grid.Column="3" Grid.Row="1" Name="Times4"/>
+		<ListBox Grid.Column="4" Grid.Row="1" Name="Times5"/>
+		<ListBox Grid.Column="5" Grid.Row="1" Name="Times6"/>
+		<ListBox Grid.Column="6" Grid.Row="1" Name="Times7"/>
+		<ListBox Grid.Column="7" Grid.Row="1" Name="Times8"/>
+		
+
     </Grid>
 </Window>

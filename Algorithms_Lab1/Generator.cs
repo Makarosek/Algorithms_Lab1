@@ -4,7 +4,7 @@ namespace Algorithms_Lab1;
 
 public class Generator
 {
-    public static int[][] GeneranteNumbers(int NumberOfNumbers)
+    public static int[][] GenerateNumbers(int NumberOfNumbers)
     {
         int[][] res = new int[5][];
         Random random = new Random();
