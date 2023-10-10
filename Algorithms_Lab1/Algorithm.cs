@@ -2,7 +2,7 @@
 
 public class Algorithm
 {
-    public int[] FirstAlg(int[] numbers)
+    public int[] FirstAlg(int[] numbers)            //Кажется, всё - таки нужно возвращать еденицу, а не массив 1
     {
         int[] res = new int[numbers.Length];
         for (int i = 0; i < numbers.Length; i++)
@@ -12,7 +12,7 @@ public class Algorithm
         return res;
     }
 
-    public int[] Summ(int[] numbers)
+    public int[] Summ(int[] numbers)                //~~~~
     {
         int[] res = new int[numbers.Length];
         int sum = 0;
@@ -29,7 +29,7 @@ public class Algorithm
         return res;
     }
     
-    public int[] Mult(int[] numbers)
+    public int[] Mult(int[] numbers)                //~~~~
     {
         int[] res = new int[numbers.Length];
         int sum = 1;

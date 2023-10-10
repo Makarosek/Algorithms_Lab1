@@ -24,9 +24,6 @@
         <ListBox Grid.Column="2" Grid.Row="0" Name="ListBox2"/>
         <ListBox Grid.Column="3" Grid.Row="0" Name="ListBox3"/>
         <ListBox Grid.Column="4" Grid.Row="0" Name="ListBox4"/>
-        <ListBox Grid.Column="0" Grid.Row="1" Name="Times1"/>
-        <ListBox Grid.Column="1" Grid.Row="1" Name="Times2"/>
-        <ListBox Grid.Column="2" Grid.Row="1" Name="Times3"/>
-        <ListBox Grid.Column="3" Grid.Row="1" Name="Times4"/>
+        <ListBox Grid.Column="0" Grid.Row="1" Name="Times"/>
     </Grid>
 </Window>
