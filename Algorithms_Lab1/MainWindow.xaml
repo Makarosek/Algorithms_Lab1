@@ -7,23 +7,33 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     
-    <Grid ShowGridLines="True">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
-        <ListBox Grid.Column="0" Grid.Row="0" Name="ListBox0"/>
-        <ListBox Grid.Column="1" Grid.Row="0" Name="ListBox1"/>
-        <ListBox Grid.Column="2" Grid.Row="0" Name="ListBox2"/>
-        <ListBox Grid.Column="3" Grid.Row="0" Name="ListBox3"/>
-        <ListBox Grid.Column="4" Grid.Row="0" Name="ListBox4"/>
-        <ListBox Grid.Column="0" Grid.Row="1" Name="Times"/>
-    </Grid>
+    <DockPanel LastChildFill="True">
+        <StackPanel DockPanel.Dock="Left" Orientation="Vertical" Name="AlgsSelection" Margin="1">
+            <Button Name="first"      Click="First_OnClick"        Content="Единичный алгоритм" Margin="1"></Button>
+            <Button Name="summ"       Click="Summ_OnClick_OnClick" Content="Сумма всех чисел" Margin="1"></Button>
+            <Button Name="mult"       Click="Mult_OnClick"         Content="Произведение всех чисел" Margin="1"></Button>
+            <Button Name="horner"     Click='Horner_OnClick'       Content="Горнер" Margin="1"></Button>            
+            <Button Name="bubbleSort" Click="BubbleSort_OnClick"   Content="Сортировка пузырьком" Margin="1"></Button>
+            <Button Name="quick"      Click='Quick_OnClick'        Content="Быcтрая сортировка" Margin="1"></Button>
+            <Button Name="tim"        Click="Tim_OnClick"          Content="Timsort" Margin="1"></Button>
+            <Button Name="gnome"      Click="Gnome_OnClick"        Content="Gnomesort" Margin="1"></Button>
+            <Button Name="select"     Click="Select_OnClick"       Content="Сортировка выбором" Margin="1"></Button>
+            <Button Name="stooge"     Click="Stooge_OnClick"       Content="Блуждающая сортировка" Margin="1"></Button>
+        </StackPanel>
+        
+        <StackPanel DockPanel.Dock="Right" Orientation="Vertical">
+            <StackPanel Orientation="Vertical">
+                <TextBlock Margin="1">Количесво входных элементов: </TextBlock>
+                <TextBox   Margin="1" Name="NumbersOfElements" ></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <TextBlock Margin="1">Шаг:</TextBlock>
+                <TextBox   Margin="1" Name="Step" ></TextBox>
+            </StackPanel>
+            <Button    Name="printGraph" Click="PrintGraph_OnClick" Content="Построить график" Margin="1"></Button>
+            <TextBlock Name="Result" Margin="1"></TextBlock>
+            <ListBox   Name="AllTimes" Margin="1"></ListBox>
+        </StackPanel>
+        <StackPanel DockPanel.Dock="Bottom"></StackPanel>
+    </DockPanel>
 </Window>
