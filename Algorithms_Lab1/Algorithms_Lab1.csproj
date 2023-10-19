@@ -7,4 +7,9 @@
         <UseWPF>true</UseWPF>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Aspose.Cells" Version="23.10.0" />
+      <PackageReference Include="EPPlus.Core" Version="1.5.4" />
+    </ItemGroup>
+
 </Project>

@@ -36,7 +36,7 @@ public class Analyzer
 
         foreach (var VARIABLE in times)
         {
-            if ((VARIABLE + 1) <= 1.5 * (middle + 1))
+            if ((VARIABLE + 1) <= 1.2 * (middle + 1))
             {
                 medianResults.Add(VARIABLE);
             }

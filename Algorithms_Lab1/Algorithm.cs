@@ -30,7 +30,17 @@ public static class Algorithm
         }
     }
     
-    // TODO Добавить алгоритм Горнера
+    public static void Horner(int[] numbers)
+    {
+        var x = 1.5f;
+        
+        double result = numbers[0];
+        
+        for (int i = 1; i < numbers.Length; i++)
+        {
+            result *= x + numbers[i];
+        }
+    }
 
     public static void BubbleSort(int[] numbers)
     {

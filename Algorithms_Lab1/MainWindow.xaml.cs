@@ -31,6 +31,7 @@ namespace Algorithms_Lab1
         private int[][] input;
         private int numberOfNumbers = 1;
         private Alg selectedAlg;
+        private int step = 1;
     
         public MainWindow()
         {
@@ -46,8 +47,10 @@ namespace Algorithms_Lab1
             input = Generator.GeneranteNumbers(numberOfNumbers);
             Result.Text = Analyzer.CalculateMedian(input, selectedAlg).ToString();
             double[] times = Analyzer.StepByStep(input, selectedAlg);
-            AllTimes.ItemsSource = times;                                               //записанное время для каждого шага
-        
+            AllTimes.ItemsSource = times;                   //записанное время для каждого шага
+            
+            Viewer.CreateWB(times, step);
+            
         }
 
         private void First_OnClick(object sender, RoutedEventArgs e)
@@ -72,7 +75,7 @@ namespace Algorithms_Lab1
 
         private void Horner_OnClick(object sender, RoutedEventArgs e) //TODO Добавить алгоритм Горнера
         {
-            throw new NotImplementedException();
+            selectedAlg = Algorithm.Horner;
         }
 
         private void Quick_OnClick(object sender, RoutedEventArgs e)
