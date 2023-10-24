@@ -25,12 +25,13 @@ namespace Algorithms_Lab1
     public partial class MainWindow : Window
     {
         public delegate void Alg(int[] arr);
-
-        public delegate void Pow(int n);
+        public delegate int Pow(int x, int n);
+        public delegate void Matrix(int[][] matrixA, int[][] matrixB);
 
         private int[][] input;
         private int numberOfNumbers = 1;
-        private Alg selectedAlg;
+        private Alg? selectedAlg;
+        private Pow? selectedPow;
         private int step = 1;
     
         public MainWindow()
@@ -43,13 +44,26 @@ namespace Algorithms_Lab1
             int numbers;
             Int32.TryParse(NumbersOfElements.Text, out numbers);
             numberOfNumbers = numbers;
-        
-            input = Generator.GeneranteNumbers(numberOfNumbers);
-            Result.Text = Analyzer.CalculateMedian(input, selectedAlg).ToString();
-            double[] times = Analyzer.StepByStep(input, selectedAlg);
-            AllTimes.ItemsSource = times;                   //записанное время для каждого шага
             
-            Viewer.CreateWB(times, step);
+            double[] times = new double[numberOfNumbers];
+
+            if (selectedAlg == null & selectedPow == null)
+            {
+                Matrix matrix = Algorithm.MatrixProduct;
+                int[][] matrixA = Generator.GenerateMatrix(numberOfNumbers);
+                times = Analyzer.GetMatrixResult(matrixA, matrix);
+
+            }else if (selectedAlg == null)
+            {
+                times = Analyzer.GetPowsResult(Generator.GeneratePowNumbers() , numberOfNumbers, selectedPow);
+            }else
+            {
+                input = Generator.GeneranteNumbers(numberOfNumbers);
+                //Result.Text = Analyzer.CalculateMedian(input, selectedAlg).ToString();
+                times = Analyzer.GetAlgsResult(input, selectedAlg);
+            }
+            AllTimes.ItemsSource = times;
+            Printer.CreateWB(times, step);
             
         }
 
@@ -73,7 +87,7 @@ namespace Algorithms_Lab1
             selectedAlg = Algorithm.BubbleSort;
         }
 
-        private void Horner_OnClick(object sender, RoutedEventArgs e) //TODO Добавить алгоритм Горнера
+        private void Horner_OnClick(object sender, RoutedEventArgs e)
         {
             selectedAlg = Algorithm.Horner;
         }
@@ -101,6 +115,36 @@ namespace Algorithms_Lab1
         private void Stooge_OnClick(object sender, RoutedEventArgs e)
         {
             selectedAlg = Algorithm.StoogeSort;
+        }
+
+        private void Pryamoy_OnClick(object sender, RoutedEventArgs e)
+        {
+            selectedAlg = Algorithm.Straight;
+        }
+
+        private void Pow_OnClick(object sender, RoutedEventArgs e)
+        {
+            selectedPow = Algorithm.Pow;
+        }
+
+        private void RecPow_OnClick(object sender, RoutedEventArgs e)
+        {
+            selectedPow = Algorithm.RecPow;
+        }
+
+        private void QuickPow_OnClick(object sender, RoutedEventArgs e)
+        {
+            selectedPow = Algorithm.QuickPow;
+        }
+
+        private void Quick1Pow_OnClick(object sender, RoutedEventArgs e)
+        {
+            selectedPow = Algorithm.QuicPow1;
+        }
+        
+        private void Mutrix_OnClick(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

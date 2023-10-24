@@ -4,7 +4,7 @@ namespace Algorithms_Lab1;
 
 public static class Algorithm
 {
-    public static void FirstAlg(int[] numbers)            //Кажется, всё - таки нужно возвращать еденицу, а не массив 1
+    public static void FirstAlg(int[] numbers)            
     {
         for (int i = 0; i < numbers.Length; i++)
         {
@@ -12,7 +12,7 @@ public static class Algorithm
         }
     }
 
-    public static void Summ(int[] numbers)                //~~~~
+    public static void Summ(int[] numbers)                
     {
         int sum = 0;
         foreach (var VARIABLE in numbers)
@@ -21,12 +21,21 @@ public static class Algorithm
         }
     }
     
-    public static void Mult(int[] numbers)                //~~~~
+    public static void Mult(int[] numbers)                
     {
         int mult = 1;
         foreach (var VARIABLE in numbers)
         {
             mult *= VARIABLE;
+        }
+    }
+
+    public static void Straight(int[] numbers)
+    {
+        double result = numbers[0];
+        for(int i = 1; i < numbers.Length - 1; i++)
+        {
+            result += numbers[i] * Math.Pow(1.5 , i - 1);
         }
     }
     
@@ -172,7 +181,7 @@ public static class Algorithm
     
     
     
-    public static void GnomeSort(int[] numbers)        // Сортировка Никиты
+    public static void GnomeSort(int[] numbers)                                 // Сортировка Никиты
     {
         int i = 1;
         int temp;
@@ -198,7 +207,7 @@ public static class Algorithm
         }
     }
     
-    public static void SelectSort(int[] numbers)       // Сортировка Амира
+    public static void SelectSort(int[] numbers)                                // Сортировка Амира
     {
         int temp;
         for (int i = 0; i < numbers.Length - 1; i++)
@@ -217,7 +226,7 @@ public static class Algorithm
         }
     }
     
-    public static void StoogeSort(int[] arr)            // Сортировка Анатолия
+    public static void StoogeSort(int[] arr)                                    // Сортировка Анатолия
     {          
         StoogeSortUtil(arr, 0, arr.Length - 1);
     }
@@ -237,7 +246,7 @@ public static class Algorithm
     }
     
 
-    public static int Pow(double x, int n)
+    public static int Pow(int x, int n)
     {
         int counter = 0;
         for (int i = 1; i < n; i++)
@@ -248,7 +257,7 @@ public static class Algorithm
         return counter;
     }
 
-    public static int RecPow(double x, int n)
+    public static int RecPow(int x, int n)
     {
         int counter = 0;
         double f;
@@ -261,14 +270,14 @@ public static class Algorithm
         {
             f = RecPow(x, n / 2);
             
-            f = n % 2 == 1 ? f * f
-                :f * f * x;
+            f = n % 2 == 1 ? f * f * x
+                :f * f;
             counter++;
         }
         return counter;
     }
 
-    public static int QuickPow(double x, int n)
+    public static int QuickPow(int x, int n)
     {
         int counter = 0;
         double c = x;
@@ -296,7 +305,7 @@ public static class Algorithm
         return counter;
     }
 
-    public static int QuicPow1(double x, int n)
+    public static int QuicPow1(int x, int n)
     {
         int counter = 0;
         double c = x;
@@ -333,9 +342,9 @@ public static class Algorithm
             result[i] = new int[n];
         }
 
-        for (int i = 0; i < n; ++i) // каждая строка A
+        for (int i = 0; i < n; ++i)             // каждая строка A
         {
-            for (int j = 0; j < n; ++j)// каждый столбец B
+            for (int j = 0; j < n; ++j)         // каждый столбец B
             {
                 for (int k = 0; k < n; ++k)
                 {
@@ -344,6 +353,5 @@ public static class Algorithm
             }
         }
     }
-    
 }
 

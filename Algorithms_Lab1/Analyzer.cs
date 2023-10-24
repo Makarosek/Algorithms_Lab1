@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Algorithms_Lab1;
 
 public class Analyzer
 {
-    private static long[] GetTimes(int[][] arr, MainWindow.Alg alg)     //метод замера времени для любого алгоритма (не считает шаги)
+    private static long[] GetTimes(int[][] arr, MainWindow.Alg alg)     
     {
         Stopwatch stopwatch = new Stopwatch();
         long[] res = new long[5];
@@ -22,7 +21,6 @@ public class Analyzer
             res[i] = stopwatch.ElapsedTicks;
             stopwatch.Reset();
         }
-        
 
         return res;
     }
@@ -31,7 +29,7 @@ public class Analyzer
     {
         long[] times = GetTimes(arr, alg);
 
-        double middle = times.Average();                    //подсчёт среднего
+        double middle = times.Average();                            
         List<long> medianResults = new List<long>();
 
         foreach (var VARIABLE in times)
@@ -44,11 +42,11 @@ public class Analyzer
         double res = medianResults.Average();
 
         return res / 10000;
-    }
+    } 
 
-    public static double[] StepByStep(int[][] arr, MainWindow.Alg alg)      //TODO проверить
+    public static double[] GetAlgsResult(int[][] arr, MainWindow.Alg alg)
     {
-        double[] times = new Double[arr[0].Length];         //массив со всеми медианами по порядку
+        double[] times = new Double[arr[0].Length]; 
         for (int i = 1; i < arr[0].Length; i++)
             {
                 int[][] temp = new int[5][];
@@ -65,6 +63,79 @@ public class Analyzer
             }
         return times;
     }
+    
+    public static double[] GetPowsResult(int[] x, int n, MainWindow.Pow pow)
+    {
+        double[] res = new double[n];
+        for (int i = 1; i <= n; i++)
+        {
+            int[] temp = new int[5];
+            for (int k = 0; k < 5; k++)
+            {
+                temp[i] = pow(x[k], i);
+            }
 
+            res[i] = CalculateMedian(temp);
+        }
+
+        return res;
+    }
+
+    private static double CalculateMedian(int[] numbers)
+    {
+        double average = numbers.Average();
+
+        List<int> temp = new List<int>();
+
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            if (numbers[i] <= average * 1.2)
+            {
+                temp.Add(numbers[i]);
+            }
+        }
+
+        double median = temp.Average();
+        return median;
+    }
+
+    public static double[] GetMatrixResult(int[][] matrixA, MainWindow.Matrix matrix)
+    {
+        double[] times = new double[matrixA.Length];
+
+        for (int i = 1; i <= matrixA.Length; i++)
+        {
+            int[][] temp = new int[i][];
+            
+            for (int j = 0; j < i; j++)
+            {
+                temp[j] = new int[i];
+                for (int k = 0; k < i; k++)
+                {
+                    temp[j][k] = matrixA[j][k];
+                }
+            }
+
+            times[i - 1] = (double)GetTimes(temp, matrix) / 10000;
+        }
+        
+        return times;
+    }
+
+    private static long GetTimes(int[][] matrixA, MainWindow.Matrix matrix)
+    {
+        Stopwatch stopwatch = new Stopwatch();
+        stopwatch.Start();
+        matrix(matrixA, matrixA);
+        stopwatch.Stop();
+
+        return stopwatch.ElapsedTicks;
+    }
+    
+    
+    
+    
+    
+    
 }
 

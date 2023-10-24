@@ -12,6 +12,7 @@
             <Button Name="first"      Click="First_OnClick"        Content="Единичный алгоритм" Margin="1"></Button>
             <Button Name="summ"       Click="Summ_OnClick_OnClick" Content="Сумма всех чисел" Margin="1"></Button>
             <Button Name="mult"       Click="Mult_OnClick"         Content="Произведение всех чисел" Margin="1"></Button>
+            <Button Name="pryamoy"    Click="Pryamoy_OnClick"      Content="Прямое вычисление"></Button>
             <Button Name="horner"     Click='Horner_OnClick'       Content="Горнер" Margin="1"></Button>            
             <Button Name="bubbleSort" Click="BubbleSort_OnClick"   Content="Сортировка пузырьком" Margin="1"></Button>
             <Button Name="quick"      Click='Quick_OnClick'        Content="Быcтрая сортировка" Margin="1"></Button>
@@ -19,6 +20,11 @@
             <Button Name="gnome"      Click="Gnome_OnClick"        Content="Gnomesort" Margin="1"></Button>
             <Button Name="select"     Click="Select_OnClick"       Content="Сортировка выбором" Margin="1"></Button>
             <Button Name="stooge"     Click="Stooge_OnClick"       Content="Блуждающая сортировка" Margin="1"></Button>
+            <Button Name="pow"        Click="Pow_OnClick"          Content="Простое возведеине в степень" Margin="1"></Button>
+            <Button Name="recPow"     Click="RecPow_OnClick"       Content="Рекурсивное возведение" Margin="1"></Button>
+            <Button Name="quickPow"   Click="QuickPow_OnClick"     Content="Быстрое возведение в степень" Margin="1"></Button>
+            <Button Name="quick1Pow"  Click="Quick1Pow_OnClick"    Content="Классическое быстрое возведение" Margin="1"></Button>
+            <Button Name="mutrix"     Click="Mutrix_OnClick"       Content="Перемножение матриц" Margin="1"></Button>
         </StackPanel>
         
         <StackPanel DockPanel.Dock="Right" Orientation="Vertical">

@@ -2,13 +2,12 @@
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using OfficeOpenXml;
 using Aspose.Cells;
 using Aspose.Cells.Charts;
 
 namespace Algorithms_Lab1;
 
-public static class Viewer
+public static class Printer
 {
     public static void CreateWB(double[] times, int step)
     {

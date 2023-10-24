@@ -23,13 +23,14 @@ public class Generator
     public static int[][] GenerateMatrix(int n)
     {
         int[][] result = new int[n][];
+        Random random = new Random();
         
         for (int i = 0; i < n; i++)
         {
             result[i] = new int[n];
             for (int j = 0; j < n; j++)
             {
-                result[i][j] = new Random().Next(0, 10000);
+                result[i][j] = random.Next(0, 10000);
             }
         }
 
@@ -39,10 +40,9 @@ public class Generator
     public static int[] GeneratePowNumbers()
     {
         int[] res = new int[5];
-        for (int i = 0; i < 5; i++)
-        {
+        
+        for (int i = 0; i < 5; i++) 
             res[i] = new Random().Next(1000);
-        }
 
         return res;
     }
