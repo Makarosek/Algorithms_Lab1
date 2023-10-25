@@ -72,10 +72,12 @@ public class Analyzer
             int[] temp = new int[5];
             for (int k = 0; k < 5; k++)
             {
-                temp[i] = pow(x[k], i);
+                Algorithm.counter = 0;
+                pow(x[k],i);
+                temp[k] = Algorithm.counter;
             }
 
-            res[i] = CalculateMedian(temp);
+            res[i - 1] = CalculateMedian(temp);
         }
 
         return res;

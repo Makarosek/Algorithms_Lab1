@@ -32,10 +32,6 @@
                 <TextBlock Margin="1">Количесво входных элементов: </TextBlock>
                 <TextBox   Margin="1" Name="NumbersOfElements" ></TextBox>
             </StackPanel>
-            <StackPanel Orientation="Vertical">
-                <TextBlock Margin="1">Шаг:</TextBlock>
-                <TextBox   Margin="1" Name="Step" ></TextBox>
-            </StackPanel>
             <Button    Name="printGraph" Click="PrintGraph_OnClick" Content="Построить график" Margin="1"></Button>
             <TextBlock Name="Result" Margin="1"></TextBlock>
             <ListBox   Name="AllTimes" Margin="1"></ListBox>

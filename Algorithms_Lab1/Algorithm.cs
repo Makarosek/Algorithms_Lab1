@@ -2,8 +2,9 @@
 
 namespace Algorithms_Lab1;
 
-public static class Algorithm
+public class Algorithm
 {
+    public static int counter = 0;
     public static void FirstAlg(int[] numbers)            
     {
         for (int i = 0; i < numbers.Length; i++)
@@ -246,20 +247,18 @@ public static class Algorithm
     }
     
 
-    public static int Pow(int x, int n)
+    public static double Pow(int x, int n)
     {
-        int counter = 0;
         for (int i = 1; i < n; i++)
         {
             x *= x;
             counter++;
         }
-        return counter;
+        return x;
     }
 
-    public static int RecPow(int x, int n)
+    public static double RecPow(int x, int n)
     {
-        int counter = 0;
         double f;
         if (n == 0)
         {
@@ -274,12 +273,11 @@ public static class Algorithm
                 :f * f;
             counter++;
         }
-        return counter;
+        return f;
     }
 
-    public static int QuickPow(int x, int n)
+    public static double QuickPow(int x, int n)
     {
-        int counter = 0;
         double c = x;
         int k = n;
 
@@ -302,19 +300,18 @@ public static class Algorithm
 
         } while (k != 0);
 
-        return counter;
+        return f;
     }
 
-    public static int QuicPow1(int x, int n)
+    public static double QuicPow1(int x, int n)
     {
-        int counter = 0;
         double c = x;
         double f = 1;
         int k = n;
 
         while (k != 0)
         {
-            if (k / 2 == 0)
+            if (k % 2 == 0)
             {
                 c *= c;
                 counter++;
@@ -329,7 +326,7 @@ public static class Algorithm
                 counter++;
             }
         }
-        return counter;
+        return f;
     }
     
     public static void MatrixProduct(int[][] matrixA, int[][] matrixB)

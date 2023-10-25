@@ -25,7 +25,7 @@ namespace Algorithms_Lab1
     public partial class MainWindow : Window
     {
         public delegate void Alg(int[] arr);
-        public delegate int Pow(int x, int n);
+        public delegate double Pow(int x, int n);
         public delegate void Matrix(int[][] matrixA, int[][] matrixB);
 
         private int[][] input;
@@ -59,7 +59,7 @@ namespace Algorithms_Lab1
             }else
             {
                 input = Generator.GeneranteNumbers(numberOfNumbers);
-                //Result.Text = Analyzer.CalculateMedian(input, selectedAlg).ToString();
+                Result.Text = Analyzer.CalculateMedian(input, selectedAlg).ToString();
                 times = Analyzer.GetAlgsResult(input, selectedAlg);
             }
             AllTimes.ItemsSource = times;
